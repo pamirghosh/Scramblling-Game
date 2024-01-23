@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrambller Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+        }
+        header{
+            width: 100%;
+            line-height: 15vh;
+            background-color: #20bf6b;
+            font-family: 'Carter One', cursive;
+        }
+        h1{
+            text-align: center;
+            color: white;
+            font-size: 1.8rem;
+            text-transform: 15px;
+            letter-spacing: 15px;
+            text-shadow: 0 1px 0 #efefef,
+                        0 2px 0 #efefef,
+                        0 3px 0 #efefef,
+                        0 4px 0 #efefef,
+                        0 30px 5px rgba(0, 0, 0, .1) ;
+        }
+        section{
+            height: 85vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #7bed9f;
+        }
+        .game-area{
+            width: 50%;
+            height: 400px;
+            padding: 20px 0;
+            position: relative;
+            background-color: #2ed573;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Source Sans Pro', sans-serif;
+            box-shadow: 0 8px 6px -6px black;
+        }
+        h3{
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        input{
+            width: 40%;
+            padding: 15px 0;
+            text-align: center;
+            border-radius: 25px;
+            outline: none;
+            border: none;
+            background-color: #dff9fb;
+            color: black;
+            margin: 2rem 0;
+            font-size: 1.1rem;
+        }
+        button{
+            font-size: 1rem;
+            cursor: pointer;
+            outline:none;
+            border: #2f3542;
+            margin-top: 10px;
+            color: #eb4d4b;
+        }
+        button.btn{
+            font-weight: 600;
+            padding: 1rem 2rem;
+            background: white;
+            text-transform: uppercase;
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: cubic-bezier(0.65,-0.25,0.25,1.95);
+        }
+        button.btn:hover,button.btn:focus,button.btn:active{
+            letter-spacing: 0.125rem;
+            word-spacing: 0.2rem;
+        }
+        .hidden{
+            display: none;
+        }
+        .level{
+            margin-top: 2px;
+        }
+        .score{
+            width: 250px;
+            height: 50px;
+            background-color: #03adfc;
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 15px 15px;
+        }
+        .score .text{
+            color: #1803fc;
+            font-family: 'Carter One', cursive;
+            text-align: center;
+            font-size: 30px;
+            font-weight: 80px;
+        }
+        .score-text{
+            color: black;
+            font-family: 'Carter One', cursive;
+            text-align: center;
+            font-size: 30px;
+            font-weight: 80px;
+        }
+        button.btn1{
+            font-weight: 600;
+            padding: 1rem 2rem;
+            background: white;
+            text-transform: uppercase;
+            transition-property: all;
+            transition-duration: 0.5s;
+            margin: 10px;
+            transition-timing-function: cubic-bezier(0.65,-0.25,0.25,1.95);
+        }
+        button.btn1:hover,button.btn1:focus,button.btn1:active{
+            color: #fc0328;
+            background-color: #aee9f5;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>WELCOME TO THE WORLD OF WORDS</h1>
+    </header>
+    <section>
+        <div class="game-area">
+            <div class="score hidden">
+                <div class="score-text"><b>Score: </b><span class="text">0</span></div>
+            </div>
+            <audio src="music/track.mp3"></audio>
+           <h3 class="msg"></h3>
+            <input type="text" class="hidden">
+            <button class="btn hidden">Click here to start</button>
+            <div class="selection">
+                <button class="btn1 selectionbtn">Fruits</button>
+                <button class="btn1 selectionbtn">Animals</button>
+                <button class="btn1 selectionbtn">Country</button>
+                <button class="btn1 selectionbtn">States</button>
+            </div>
+        </div>
+    </section>
+    <script src="index.js"></script>
+</body>
+</html>
